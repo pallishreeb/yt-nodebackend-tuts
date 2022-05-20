@@ -1,0 +1,6 @@
+# send email from nodejs application through sendgrim mailer with attachment
+
+step 1- 
+create sendgrid account and verify your email
+step 2- 
+create secret api key to configure in nodejs application

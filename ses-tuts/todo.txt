@@ -1,0 +1,12 @@
+#Send Email from nodejs application Through aws SES(Simple Email Service)
+
+Step - 1
+Create an aws account
+
+Step - 2
+Go to profile/Security Credentials- create access Key and secret key
+
+Step - 3
+Go to SES service and verify your Identity(Email)
+
+step 4- nodejs installed in your system
