@@ -1,0 +1,25 @@
+we will see how to connect to mysql in nodejs application  and create apis
+
+will make a crud application in nodejs and mysql raw queries
+then with orm(sequelize)
+
+step 1- install mysql or xaamp 
+step 2-install nodejs
+
+package we will use - 
+
+1st app- 
+expressjs
+mysql2
+nodemon
+
+2nd app-
+expressjs
+sequelize(orm)
+nodemon
+
+
+
+
+
+
