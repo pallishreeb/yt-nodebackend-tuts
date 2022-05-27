@@ -1,0 +1,18 @@
+#-create a pdf using json data (dynamic/may be come from user input)
+
+#-upload that newly created pdf to aws s3 buckect and get the pdf link
+
+#packages we will use 
+
+nodejs-
+ejs puppeteer aws-sdk fs-extra nanoid
+
+ puppeteer
+
+ ejs
+
+ aws-sdk
+
+ fs-extra
+
+ nanoid
