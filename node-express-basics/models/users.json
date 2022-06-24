@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "John doe",
+    "email": "john@gmail.com",
+    "mob": "9876543210"
+  },
+  {
+    "id": 2,
+    "name": "John doe2",
+    "email": "john@gmail.com",
+    "mob": "9876543210"
+  },
+  {
+    "id": 3,
+    "name": "John doe3",
+    "email": "john@gmail.com",
+    "mob": "9876543210"
+  },
+  {
+    "id": 4,
+    "name": "John doe4",
+    "email": "john@gmail.com",
+    "mob": "9876543210"
+  }
+]

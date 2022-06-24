@@ -1,0 +1,46 @@
+nodejs -
+Nodejs is a javascript runtime framework.
+Nodejs runs on  top of the V8 engine(Chrome runtime engine that compiles the javascript 
+code in the native machine codefollowed by c++ code.)
+
+Expressjs-
+
+Expressjs is the framework for nodejs to build web applications,REST APIs quickly and efficiently
+
+Route-
+Route is the end point of your APIs
+
+Router-
+Router is a separate instance of middleware  to handle routes
+
+Request-
+The request Object represents the HTTP request and has properties for the request
+string,query,body,headers and so on.
+
+
+Response-
+The response object represents the HTTP response that an express app send when it gets a http request.
+
+
+Middlewares-
+
+Middleware functions are functions that have access to the request object (req), the response object (res),
+and the next middleware function in the application’s request-response cycle. The next middleware function is
+commonly denoted by a variable named next.
+
+Middleware functions can perform the following tasks:
+
+Execute any code.
+Make changes to the request and the response objects.
+End the request-response cycle.
+Call the next middleware function in the stack.
+
+-Middlewares are the functions as the name suggests can be used to make changes in the request response life cycle
+-Middlewares function execute before sending response back to client
+-You can acces reuest and response object
+
+
+
+
+
+
