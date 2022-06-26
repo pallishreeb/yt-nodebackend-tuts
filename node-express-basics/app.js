@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const ejs = require("ejs");
+const session = require("express-session");
+const cookeiParser = require("cookie-parser");
+
 const PORT = 5000;
 
 const userData = require("./models/users.json");
@@ -12,16 +15,59 @@ const users = require("./routes/users");
 
 //middlewares
 app.use(express.json());
-
+app.use(cookeiParser());
+//session middleware
+app.use(
+  session({
+    secret: "mysecret123ghjkk",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 3600000, //1hr
+    },
+  })
+);
 app.use(middleware);
 app.use(middleware2);
 
 app.set("view engine", "ejs");
 
+//set cookies
+app.get("/cookie", (req, res) => {
+  console.log(req.cookies);
+  res.cookie("name", "express-cookie", { expire: 3600000 });
+  res.send("cookie sent to client");
+});
+//clear cookies
+app.get("/clear", (req, res) => {
+  console.log(req.cookies);
+  res.clearCookie("name");
+  res.send("cookie sent to client");
+});
+
+//authentication with session
+app.get("/auth/:name", (req, res) => {
+  // console.log("Session object", req.session);
+  console.log("session ID", req.sessionID);
+
+  if (req.session.isAuth == true) {
+    return res.json(req.session);
+  } else {
+    if (req.params.name) {
+      req.session.isAuth = true;
+      req.session.username = req.params.name;
+      return res.json(req.session);
+    } else {
+      res.json({
+        message: "bad Request",
+      });
+    }
+  }
+});
+
 //simple html file
 app.get("/home", (req, res) => {
   // res.sendFile(process.cwd() + "/views/index.html")
-  console.log(req.hello);
   res.render("index", { users: userData });
 });
 //routes

@@ -39,6 +39,41 @@ Call the next middleware function in the stack.
 -Middlewares function execute before sending response back to client
 -You can acces reuest and response object
 
+Render Ejs-
+Populate dynamic data
+
+Error Handler-
+ middleware
+ accept 4 parameters
+ err,req,res,next
+
+-Upload Image or Doc in Expressjs
+  Multer 
+  Cloudinary
+
+-Logger 
+winstone
+log4j
+morgan
+
+-validation 
+joe
+
+
+
+session, cookies , cors , helmet 
+
+
+
+Sessions-
+
+
+
+
+express-session - middleware to store session data in server 
+
+
+
 
 
 
