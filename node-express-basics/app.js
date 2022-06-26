@@ -65,6 +65,13 @@ app.get("/auth/:name", (req, res) => {
   }
 });
 
+//logout
+//set cookies
+app.get("/logout", (req, res) => {
+  req.session.destroy();
+  res.send("ok");
+});
+
 //simple html file
 app.get("/home", (req, res) => {
   // res.sendFile(process.cwd() + "/views/index.html")
