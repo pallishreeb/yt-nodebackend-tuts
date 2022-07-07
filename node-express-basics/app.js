@@ -15,6 +15,7 @@ const users = require("./routes/users");
 
 //middlewares
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookeiParser());
 //session middleware
 app.use(
@@ -71,6 +72,12 @@ app.get("/logout", (req, res) => {
   req.session.destroy();
   res.send("ok");
 });
+
+
+//
+app.post("/pic", (req,res) => {
+  console.log(req.body)
+})
 
 //simple html file
 app.get("/home", (req, res) => {
