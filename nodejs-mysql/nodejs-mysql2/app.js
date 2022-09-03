@@ -47,24 +47,16 @@ app.get("/user/:id", function (req, res) {
 });
 // Add a new user
 app.post("/user", function (req, res) {
-  // let user = req.body.user;
+  let { name, email, mob } = req.body;
 
-  let user = {
-    name: "John",
-    email: "john@gmail.com",
-    address: "abcd",
-  };
-
-  let values = [[user.name, user.email, user.address]];
-  console.log(user);
-  if (!user) {
+  if (!name || !email) {
     return res
       .status(400)
       .send({ error: true, message: "Please provide user" });
   }
   dbConn.query(
-    "INSERT INTO users (name,email, address) VALUES ? ",
-    [values],
+    "INSERT INTO users (name,email, phoneNumber) VALUES (? ,?,?) ",
+    [name, email, mob],
     function (error, results, fields) {
       if (error) throw error;
       return res.send({
@@ -78,11 +70,13 @@ app.post("/user", function (req, res) {
 //  Update user with id
 app.put("/user/:id", function (req, res) {
   let user_id = req.params.id;
-  // let user = req.body.user;
+  let { name, email, mob } = req.body;
+
   let user = {
-    name: "John1",
-    email: "john@gmail.com",
-    address: "abcd",
+    name: name,
+    email,
+    email,
+    phoneNumber: mob,
   };
 
   if (!user_id || !user) {

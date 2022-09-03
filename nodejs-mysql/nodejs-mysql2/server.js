@@ -15,6 +15,7 @@ var dbConn = mysql.createConnection({
   password: "******",
   database: "node_mysql_api",
 });
+
 // connect to database
 dbConn.connect();
 // Retrieve all users
